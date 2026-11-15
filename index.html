@@ -83,13 +83,13 @@ button,input,select,textarea{font:inherit;color:inherit}
 .hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(42% 52% at var(--gx,45%) 62%,rgba(246,246,242,.13),transparent 70%)}
 .hero-name{position:absolute;left:var(--gutter);right:var(--gutter);top:22%;display:flex;justify-content:space-between;white-space:nowrap;line-height:.8;font-size:14vw;pointer-events:none;z-index:2;will-change:transform}
 .hero-name span{display:block}
-.hero-name .rl{overflow:hidden;padding:.04em .06em 0 0;margin-right:-.06em}
-.hero-name .rl>span{transform:translateY(108%);transition:transform 1s var(--ease)}
-.loaded .hero-name .rl>span{transform:none}
-.loaded .hero-name .rl:last-child>span{transition-delay:.09s}
-.hero-photo{position:absolute;bottom:0;left:30%;height:86%;aspect-ratio:594/774;z-index:3;pointer-events:none;transform-origin:50% 100%;will-change:transform;opacity:0;transition:opacity .9s ease .25s}
-.loaded .hero-photo{opacity:1}
-.hero-photo img{width:100%;height:100%}
+.hero-name .rl{padding:.04em .06em 0 0;margin-right:-.06em}
+.hero-name .rl>span{opacity:0;transform:translateX(-38vw) skewX(-10deg);transition:transform .8s cubic-bezier(.16,1,.3,1),opacity .18s linear}
+.hero-name .rl:last-child>span{transform:translateX(38vw) skewX(10deg);transition-delay:.08s}
+.loaded .hero-name .rl>span{opacity:1;transform:none}
+.hero-photo{position:absolute;bottom:0;left:30%;height:86%;aspect-ratio:594/774;z-index:3;pointer-events:none;transform-origin:50% 100%;will-change:transform}
+.hero-photo img{width:100%;height:100%;opacity:0;transform:translateY(7%) scale(1.06);transform-origin:50% 100%;transition:opacity .45s ease,transform 1s cubic-bezier(.16,1,.3,1)}
+.jason .hero-photo img{opacity:1;transform:none}
 .hero-shade{position:absolute;inset:auto 0 0 0;height:38%;z-index:4;pointer-events:none;background:linear-gradient(180deg,rgba(7,8,8,0),rgba(7,8,8,.82) 70%,rgba(7,8,8,.96))}
 .callout{position:absolute;left:var(--gutter);bottom:128px;z-index:5;font-size:clamp(34px,3.7vw,58px);pointer-events:none}
 .callout span{display:block}
@@ -97,10 +97,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 .hero-copy{position:absolute;right:var(--gutter);bottom:128px;z-index:5;width:min(430px,33vw)}
 .hero-copy p{font-size:clamp(17px,1.35vw,20px);line-height:1.45;margin-bottom:24px;color:#E4E6E1}
 .hero-actions{display:flex;flex-wrap:wrap;gap:14px;padding-left:6px}
-.hero-hint{position:absolute;top:92px;right:var(--gutter);z-index:5;font-size:13px;color:var(--steel);display:flex;align-items:center;gap:10px;pointer-events:none;transition:opacity .5s}
-.hero-hint i{width:8px;height:8px;background:var(--yellow);transform:skewX(-10deg);animation:blink 1.4s steps(2) infinite}
-@keyframes blink{50%{opacity:.2}}
-.fade-in{opacity:0;transform:translateY(12px);transition:opacity .8s var(--ease) .55s,transform .8s var(--ease) .55s}
+.fade-in{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease) .32s,transform .7s var(--ease) .32s}
+.hero-copy.fade-in{transition-delay:.46s}
 .loaded .fade-in{opacity:1;transform:none}
 @media (max-width:860px){
   .hero{min-height:720px}
@@ -113,13 +111,13 @@ button,input,select,textarea{font:inherit;color:inherit}
   .callout span{display:inline}
   .hero-copy{left:var(--pad);right:var(--pad);width:auto;bottom:96px}
   .hero-copy p{margin-bottom:18px}
-  .hero-hint{display:none}
   .callout.desk{display:none}
 }
 @media (min-width:861px){.callout.mob{display:none}}
 
 /* ticker */
-.ticker{position:relative;z-index:8;margin:-58px -3vw 0;background:var(--yellow);color:var(--black);transform:rotate(-1.6deg);overflow:hidden;padding:14px 0 12px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.ticker{position:relative;z-index:8;margin:-58px -3vw 0;background:var(--yellow);color:var(--black);transform:rotate(-1.6deg);overflow:hidden;padding:14px 0 12px;box-shadow:0 20px 50px rgba(0,0,0,.5);opacity:0;transition:opacity .6s ease .5s}
+.loaded .ticker{opacity:1}
 .ticker-track{display:flex;width:max-content;will-change:transform}
 .ticker-track span{font-size:clamp(30px,3.4vw,50px);padding:0 .5em;display:flex;align-items:center;gap:1em;white-space:nowrap}
 .ticker-track span::after{content:"";width:.34em;height:.62em;background:var(--black);transform:skewX(-14deg)}
@@ -331,8 +329,8 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
-  .hero-name .rl>span,.fade-in{transform:none;opacity:1}
-  .hero-photo{opacity:1}
+  .hero-name .rl>span,.fade-in,.hero-photo img{transform:none;opacity:1}
+  .ticker{opacity:1}
   .story .h2 .w,.creed span{opacity:1}
   .earn{height:auto}.earn-sticky{position:relative;height:auto;padding:120px 0}
 }
@@ -357,7 +355,7 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 
 <!-- HERO -->
 <section class="hero" id="hero" aria-label="Introduction">
-  <canvas id="field" role="img" aria-label="A paintless dent repair light board. Click or tap to dent the panel and watch it pull back smooth."></canvas>
+  <canvas id="field" aria-hidden="true"></canvas>
   <div class="hero-glow" id="heroGlow"></div>
   <h1 class="display hero-name" id="heroName" aria-label="Jason Heifner">
     <span class="rl" id="hn1" aria-hidden="true"><span>Jason</span></span>
@@ -376,7 +374,6 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
       <a class="btn btn-w" href="#speaking"><span>Book him to speak</span></a>
     </div>
   </div>
-  <div class="hero-hint" id="hint"><i></i>Click the panel. Pull the dent.</div>
 </section>
 
 <div class="ticker" aria-hidden="true"><div class="ticker-track display" id="ticker"></div></div>
@@ -706,48 +703,49 @@ function layoutHero(){
   }
 }
 
-/* ---------- HERO: PDR light board ---------- */
-const field=$('field'),fx=field.getContext('2d'),hint=$('hint');
-let FW=0,FH=0,dents=[],ptr={x:-999,y:-999,d:0,last:0},running=false,fieldVisible=true;
-function sizeField(){const dpr=Math.min(lite?1.5:2,devicePixelRatio||1);FW=field.clientWidth;FH=field.clientHeight;field.width=FW*dpr;field.height=FH*dpr;fx.setTransform(dpr,0,0,dpr,0,0);drawField()}
-function dent(x,y,r,depth){dents.push({x,y,r,depth,age:0});if(dents.length>28)dents.shift();wake()}
-function disp(x,y){
-  let o=0;
-  for(let i=0;i<dents.length;i++){const d=dents[i],dx=x-d.x,dy=y-d.y,q=(dx*dx+dy*dy)/(d.r*d.r);if(q>7)continue;o+=d.depth*Math.exp(-q)*(dy/d.r)}
-  if(ptr.d>.2){const dx=x-ptr.x,dy=y-ptr.y,r=90,q=(dx*dx+dy*dy)/(r*r);if(q<7)o+=ptr.d*Math.exp(-q)*(dy/r)}
-  return o;
-}
-function drawField(){
+/* ---------- HERO: light-board lines shoot in from both sides, top to bottom ---------- */
+const field=$('field'),fx=field.getContext('2d');
+const LINE_SPAN=600,LINE_DUR=640;      // ms: stagger from the top line to the bottom line, and each line's travel time
+let FW=0,FH=0,introT0=0,running=false;
+function sizeField(){const dpr=Math.min(lite?1.5:2,devicePixelRatio||1);FW=field.clientWidth;FH=field.clientHeight;field.width=FW*dpr;field.height=FH*dpr;fx.setTransform(dpr,0,0,dpr,0,0);drawField(performance.now())}
+const fromLeft=i=>((Math.imul(i+3,2654435761)>>>16)&1)===0;
+function drawField(now){
   fx.clearRect(0,0,FW,FH);
-  const gap=FW<700?11:15,step=FW<700?6:7;
+  if(!introT0)return;
+  const gap=FW<700?11:15,el=now-introT0;
   for(let y=gap*.5,i=0;y<FH+gap;y+=gap,i++){
-    const t=y/FH,a=.05+.8*Math.exp(-Math.pow((t-bandT)/.2,2));
-    fx.lineWidth=i%4===0?2.2:1.1;
-    fx.strokeStyle=i%4===0?'rgba(255,214,10,'+(a*.9).toFixed(3)+')':'rgba(246,246,242,'+a.toFixed(3)+')';
-    fx.beginPath();
-    for(let x=-step;x<=FW+step;x+=step){const yy=y+disp(x,y);if(x===-step)fx.moveTo(x,yy);else fx.lineTo(x,yy)}
-    fx.stroke();
+    const p=clamp((el-(y/FH)*LINE_SPAN-(i%3)*26)/LINE_DUR);
+    if(p<=0)continue;
+    const e=1-Math.pow(1-p,5),L=fromLeft(i),x0=L?0:FW*(1-e),x1=L?FW*e:FW;
+    const t=y/FH,a=.05+.8*Math.exp(-Math.pow((t-bandT)/.2,2)),gold=i%4===0;
+    fx.lineWidth=gold?2.2:1.1;
+    fx.strokeStyle=gold?'rgba(255,214,10,'+(a*.9).toFixed(3)+')':'rgba(246,246,242,'+a.toFixed(3)+')';
+    fx.beginPath();fx.moveTo(x0,y);fx.lineTo(x1,y);fx.stroke();
+    if(p<1){ // a bright head on the leading end while the line is still travelling
+      const hx=L?x1:x0,len=(40+FW*.16)*(1-e)+14,k=(1-p)*.9;
+      fx.lineWidth=gold?3:2;
+      fx.strokeStyle=gold?'rgba(255,226,90,'+k.toFixed(3)+')':'rgba(255,255,255,'+k.toFixed(3)+')';
+      fx.beginPath();fx.moveTo(hx,y);fx.lineTo(L?hx-len:hx+len,y);fx.stroke();
+    }
   }
 }
-function tick(){
-  if(!fieldVisible){running=false;return}
-  for(const d of dents){d.age++;if(d.age>34)d.depth*=.955}
-  dents=dents.filter(d=>Math.abs(d.depth)>.25);
-  const idle=performance.now()-ptr.last>140;
-  ptr.d=lerp(ptr.d,idle?0:22,.12);
-  drawField();
-  if(dents.length||ptr.d>.2||!idle)requestAnimationFrame(tick);else{running=false;drawField()}
+function tick(now){
+  drawField(now);
+  if(now-introT0<LINE_SPAN+LINE_DUR+140)requestAnimationFrame(tick);else{running=false;drawField(now)}
 }
-function wake(){if(reduce){drawField();return}if(!running){running=true;requestAnimationFrame(tick)}}
-function local(e){const r=field.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
-hero.addEventListener('pointermove',e=>{if(reduce||e.pointerType==='touch')return;const p=local(e);ptr.x=p.x;ptr.y=p.y;ptr.last=performance.now();wake()});
-hero.addEventListener('pointerdown',e=>{if(e.target.closest('a,button'))return;const p=local(e);dent(p.x,p.y,50+Math.random()*30,30+Math.random()*16);hint.style.opacity=0;if(reduce)setTimeout(()=>{dents=[];drawField()},500)});
-new IntersectionObserver(es=>{fieldVisible=es[0].isIntersecting;if(fieldVisible)wake()}).observe(field);
-function storm(){
-  if(reduce){document.body.classList.add('loaded');return}
-  const n=FW<700?10:20;
-  for(let i=0;i<n;i++)setTimeout(()=>dent(Math.random()*FW,FH*clamp(bandT+(Math.random()-.5)*.6,.05,.8),26+Math.random()*46,18+Math.random()*24),i*50+Math.random()*60);
-  setTimeout(()=>document.body.classList.add('loaded'),lite?120:500);
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+// The opening, in order: lines, then Jason, then the name and the rest of the words.
+function intro(fontReady){
+  const b=document.body.classList;
+  if(reduce){introT0=-1e7;drawField(0);b.add('jason','loaded');return}
+  introT0=performance.now();running=true;requestAnimationFrame(tick);
+  const img=photo.querySelector('img');
+  const imgReady=img.decode?img.decode().catch(()=>{}):Promise.resolve();
+  Promise.all([Promise.race([Promise.all([imgReady,fontReady]),wait(1300)]),wait(460)]).then(()=>{
+    layoutHero();fitFoot();b.add('jason');
+    setTimeout(()=>b.add('loaded'),300);
+  });
+  setTimeout(()=>b.add('jason','loaded'),2600);
 }
 
 /* ---------- fit helpers ---------- */
@@ -872,7 +870,7 @@ function onScroll(){
     if(hp<1&&!lite){
       photo.style.transform='scale('+(1+hp*.12)+')';
       hName.style.transform='translateY('+(hp*90)+'px)';
-      heroCopy.style.opacity=1-hp*1.6;
+      heroCopy.style.opacity=hp>.002?1-hp*1.6:'';
     }
     const sr=sl.getBoundingClientRect(),sp=clamp((vh*.86-sr.top)/(vh*.5));
     const lit=Math.round(sp*sw.length);sw.forEach((w,i)=>w.classList.toggle('on',i<lit));
@@ -898,12 +896,11 @@ function sizeAll(){layoutHero();sizeField();fitFoot();sizeTicker();sizeVentures(
 let rz,lastW=innerWidth;addEventListener('resize',()=>{if(lite&&innerWidth===lastW)return;lastW=innerWidth;clearTimeout(rz);rz=setTimeout(sizeAll,120)});
 sizeAll();
 if(reduce){sw.forEach(w=>w.classList.add('on'));creed.forEach(c=>c.classList.add('on'))}
-// start as soon as the headline font is in (it is preloaded), and never wait long for it
+// the lines start at once; Jason and the name follow as soon as the photo and headline font are in
 let fontWait=Promise.resolve();
 try{if(document.fonts&&document.fonts.load)fontWait=document.fonts.load('italic 900 extra-condensed 40px Archivo','JASONHEIFNER')}catch(_){}
-Promise.race([fontWait,new Promise(r=>setTimeout(r,700))]).catch(()=>{}).then(()=>{sizeAll();storm()});
+intro(Promise.resolve(fontWait).catch(()=>{}));
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(sizeAll);
-setTimeout(()=>document.body.classList.add('loaded'),1500);
 })();
 </script>
 </body>
