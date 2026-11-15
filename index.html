@@ -161,13 +161,14 @@ button,input,select,textarea{font:inherit;color:inherit}
 .ventures-head .h2{font-size:clamp(46px,min(7.4vw,11vh),112px)}
 .ventures-head p{max-width:22em}
 .track{display:flex;gap:26px;padding:0 var(--gutter);will-change:transform}
-.venture{flex:none;width:min(1200px,86vw);height:min(580px,calc(100vh - 290px));min-height:410px;background:var(--black);box-shadow:inset 0 0 0 1px var(--hair);display:grid;grid-template-columns:.74fr 1.26fr;overflow:hidden}
+.venture{flex:none;width:min(1200px,86vw);height:min(580px,calc(100vh - 290px));min-height:410px;background:var(--black);box-shadow:inset 0 0 0 1px var(--hair);display:grid;grid-template-columns:.74fr 1.26fr;grid-template-rows:minmax(0,1fr);overflow:hidden}
 .v-copy{padding:clamp(26px,3.2vw,48px);display:flex;flex-direction:column;justify-content:space-between;gap:22px;border-top:4px solid var(--yellow)}
 .v-role{font-stretch:80%;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.04em;font-size:14px;color:var(--yellow)}
 .v-name{font-size:clamp(54px,6.2vw,96px);margin:10px 0 16px}
 .v-copy p{color:#C6CAC6;max-width:30em}
 .v-actions{display:flex;gap:14px;flex-wrap:wrap;padding-left:6px}
 .v-visual{position:relative;background:#0B0D0E;border-left:1px solid var(--hair);overflow:hidden}
+@media (min-width:901px) and (max-height:820px){.v-copy{padding:24px 26px;gap:14px}.v-name{font-size:clamp(44px,4.8vw,70px);margin:6px 0 12px}.v-copy p{font-size:15px;line-height:1.5}.v-actions .btn{height:46px;padding:0 20px;font-size:15px}.lead>div{padding:10px 12px 12px}.lead dd{font-size:12.5px}}
 .ventures-progress{height:3px;background:var(--hair);margin:clamp(20px,3.4vh,40px) var(--gutter) 0;position:relative;overflow:hidden}
 .ventures-progress i{position:absolute;inset:0;background:var(--yellow);transform-origin:0 50%;transform:scaleX(0)}
 /* Panel Ops: real product screens, shown as whole frames */
@@ -190,7 +191,17 @@ button,input,select,textarea{font:inherit;color:inherit}
 @keyframes poProg{to{transform:scaleX(1)}}
 .po-note{flex:none;font-size:12px;color:#6F7B95;text-align:center}
 /* Roofcast: the live building model (holo.js, restyled build of the Roofcast project's model); stills show if WebGL can't run */
-.rc{background:var(--black)}
+.rc{background:var(--black);display:flex;flex-direction:column}
+.rc-stage{position:relative;flex:1;min-height:210px}
+.rc-note{margin-left:auto;align-self:center;font-size:12px;color:var(--stage-dim,#9A9F9B);text-shadow:0 1px 8px var(--black)}
+.lead{flex:none;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--hair);background:#0B0C0C}
+.lead>div{padding:14px 14px 16px;border-left:1px solid var(--hair);opacity:0;transform:translateY(10px);transition:opacity .45s ease,transform .5s var(--ease)}
+.lead>div:first-child{border-left:0}
+.lead.in>div{opacity:1;transform:none}
+.lead.in>div:nth-child(2){transition-delay:.09s}.lead.in>div:nth-child(3){transition-delay:.18s}.lead.in>div:nth-child(4){transition-delay:.27s}.lead.in>div:nth-child(5){transition-delay:.36s}
+.lead dt{font-stretch:80%;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.04em;font-size:12px;color:var(--yellow);margin-bottom:6px}
+.lead dd{font-size:13px;line-height:1.38;color:#D4D7D1}
+.lead dd b{display:block;color:var(--white);font-weight:700;font-size:14px;margin-bottom:2px}
 .holo{--holo:#FFD60A;--stage-dim:#9A9F9B;position:absolute;inset:0;background:var(--black);touch-action:pan-y;overflow:hidden;user-select:none;-webkit-user-select:none}
 .holo.live{cursor:grab}
 .holo.live:active{cursor:grabbing}
@@ -222,14 +233,6 @@ button,input,select,textarea{font:inherit;color:inherit}
 .rc-toggle button:hover{color:var(--white)}
 .rc-toggle button:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 .rc-toggle button[aria-pressed=true]{background:var(--yellow);color:var(--black)}
-.rc-size{flex:1;min-width:180px;display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;color:#B9BCB6;padding:0 14px;background:rgba(7,8,8,.82);border:1px solid rgba(246,246,242,.28);white-space:nowrap}
-.rc-size[hidden]{display:none}
-.rc-size input{flex:1;min-height:36px}
-input[type=range]{-webkit-appearance:none;appearance:none;background:transparent;min-width:60px}
-input[type=range]::-webkit-slider-runnable-track{height:3px;background:rgba(246,246,242,.28)}
-input[type=range]::-moz-range-track{height:3px;background:rgba(246,246,242,.28)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:22px;margin-top:-10px;background:var(--yellow);border:none;cursor:pointer;transform:skewX(-10deg)}
-input[type=range]::-moz-range-thumb{width:12px;height:22px;border-radius:0;background:var(--yellow);border:none;cursor:pointer}
 .aff{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(24px,4vw,56px)}
 .aff div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid var(--hair);font-size:clamp(30px,3vw,44px)}
 .aff div:first-child{border-top:1px solid var(--hair)}
@@ -242,7 +245,13 @@ input[type=range]::-moz-range-thumb{width:12px;height:22px;border-radius:0;backg
   .venture{width:100%;height:auto;min-height:0;grid-template-columns:1fr}
   .v-visual{height:380px;border-left:0;border-top:1px solid var(--hair)}
   .v-visual.po{height:auto}
-  .v-visual.rc{height:420px}
+  .v-visual.rc{height:auto}
+  .rc-stage{flex:none;height:300px}
+  .lead{grid-template-columns:1fr 1fr}
+  .lead>div{border-left:0;border-top:1px solid var(--hair)}
+  .lead>div:nth-child(-n+2){border-top:0}
+  .lead>div:nth-child(even){border-left:1px solid var(--hair)}
+  .lead>div:last-child{grid-column:1/-1}
   .ventures-progress{display:none}
 }
 @media (max-width:600px){.po{padding:14px 12px 12px}.po-tabs button{font-size:12.5px;padding:10px 4px 9px}.hud b{font-size:18px}.rc-toggle button{padding:8px 11px;font-size:13px}}
@@ -329,7 +338,7 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
-  .hero-name .rl>span,.fade-in,.hero-photo img{transform:none;opacity:1}
+  .hero-name .rl>span,.fade-in,.hero-photo img,.lead>div{transform:none;opacity:1}
   .ticker{opacity:1}
   .story .h2 .w,.creed span{opacity:1}
   .earn{height:auto}.earn-sticky{position:relative;height:auto;padding:120px 0}
@@ -486,7 +495,7 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
           <div>
             <div class="v-role">For roofing contractors</div>
             <h3 class="display v-name">Roofcast</h3>
-            <p>Roof leads with the homework done. Every one comes with the building, its measured roof size and the hail and wind record on the address. A request goes to one roofer, never a list.</p>
+            <p>Every Roofcast lead shows up like this: the building, its measured roof, the storm record on the address and an owner who asked for the call. It goes to one roofer, never a list.</p>
           </div>
           <div class="v-actions">
             <a class="btn btn-y" href="https://roofcast.thinkabstrakt.com/roofers/" target="_blank" rel="noopener"><span>Apply for your area</span></a>
@@ -494,20 +503,29 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
           </div>
         </div>
         <div class="v-visual rc">
-          <div class="holo" id="holo">
-            <img class="holo-still on" data-kind="home" src="rc-home.webp" loading="lazy" decoding="async" width="840" height="655" alt="Roofcast wireframe model of a single-story home with garage. The roof measures 2,600 square feet, or 26 squares.">
-            <img class="holo-still" data-kind="com" src="rc-hotel.webp" loading="lazy" decoding="async" width="840" height="655" alt="Roofcast wireframe model of a four-story hotel. The roof measures 24,000 square feet, or 240 squares.">
-            <div class="hud"><b id="rcSqft">2,600 sq ft of roof</b><span id="rcKind">Single-story home with garage</span></div>
-            <div class="hint">Drag to turn</div>
-            <button class="btn btn-y rc-load" id="rcLoad" type="button"><span>Explore in 3D</span></button>
-          </div>
-          <div class="rc-ui">
-            <div class="rc-toggle" role="group" aria-label="Building type">
-              <button type="button" aria-pressed="true" data-kind="home">A home</button>
-              <button type="button" aria-pressed="false" data-kind="com">A commercial building</button>
+          <div class="rc-stage">
+            <div class="holo" id="holo">
+              <img class="holo-still on" data-kind="home" src="rc-home.webp" loading="lazy" decoding="async" width="840" height="655" alt="Wireframe model of the building in a sample Roofcast lead: a single-story home with garage, roof measured at 26 squares.">
+              <img class="holo-still" data-kind="com" src="rc-hotel.webp" loading="lazy" decoding="async" width="840" height="655" alt="Wireframe model of the building in a sample Roofcast lead: a four-story hotel, roof measured at 240 squares.">
+              <div class="hud"><b id="rcTitle">Sample lead: North Texas</b><span id="rcKind">Single-story home with garage</span></div>
+              <div class="hint">Drag to turn</div>
+              <button class="btn btn-y rc-load" id="rcLoad" type="button"><span>Explore in 3D</span></button>
             </div>
-            <label class="rc-size" id="rcSizeWrap" hidden>Roof size <input type="range" id="rcSize" min="1000" max="6000" step="100" value="2600"></label>
+            <div class="rc-ui">
+              <div class="rc-toggle" role="group" aria-label="Sample lead">
+                <button type="button" aria-pressed="true" data-kind="home">Home, North Texas</button>
+                <button type="button" aria-pressed="false" data-kind="com">Hotel, Phoenix</button>
+              </div>
+              <span class="rc-note">Sample leads, for illustration</span>
+            </div>
           </div>
+          <dl class="lead" id="lead" aria-live="polite">
+            <div><dt>The building</dt><dd id="ldBuilding"></dd></div>
+            <div><dt>The roof</dt><dd id="ldRoof"></dd></div>
+            <div><dt>Storm record</dt><dd id="ldStorm"></dd></div>
+            <div><dt>The situation</dt><dd id="ldSit"></dd></div>
+            <div><dt>Permission</dt><dd id="ldPerm"></dd></div>
+          </dl>
         </div>
       </article>
 
@@ -781,24 +799,27 @@ function poShow(i){
 poTabs.forEach((b,k)=>b.addEventListener('click',()=>poShow(k)));
 new IntersectionObserver(es=>{poVis=es[0].isIntersecting;poShow(poI)},{threshold:.35}).observe($('poScreens'));
 
-/* ---------- Roofcast: mount the real building model, keep the stills if it can't load ---------- */
-const holoEl=$('holo'),rcSize=$('rcSize'),rcWrap=$('rcSizeWrap'),rcSqft=$('rcSqft'),rcKind=$('rcKind');
-const RC={kind:'home',sqft:{home:2600,com:24000},range:{home:[1000,6000,100],com:[3000,150000,500]},name:{home:'Single-story home with garage',com:'4-story hotel'}};
-let holo=null,holoAsked=false;
+/* ---------- Roofcast: the model is the building in a sample lead; the strip under it is what arrives with it ---------- */
+const holoEl=$('holo'),leadEl=$('lead'),rcLoad=$('rcLoad');
+const LEADS={
+  home:{place:'North Texas',sqft:2600,building:'Single-story home with garage',storm:['4 hail reports','Near the address since 2019. Largest stone: 2 in.'],sit:['Insurance claim','The owner expects insurance to pay.'],perm:['Asked for a call','Consent to call and text is on record.']},
+  com:{place:'Phoenix',sqft:24000,building:'4-story hotel',storm:['3 storm reports','Monsoon wind and hail near the address since 2021.'],sit:['Paying direct','The owner wants a written scope first.'],perm:['Asked for a call','The property manager’s consent is on record.']}
+};
+let rcKindNow='home',holo=null,holoAsked=false,leadSeen=false;
 const fmt=n=>Math.round(n).toLocaleString('en-US');
+const cell=(id,head,body)=>{$(id).innerHTML='<b>'+head+'</b>'+body};
 function rcApply(){
-  const k=RC.kind,sq=RC.sqft[k];
-  rcSqft.textContent=fmt(sq)+' sq ft of roof';
-  if(!holo)rcKind.textContent=RC.name[k];
+  const k=rcKindNow,L=LEADS[k];
+  $('rcTitle').textContent='Sample lead: '+L.place;$('rcKind').textContent=L.building;
+  cell('ldBuilding',L.building,'Confirmed on an aerial photo.');
+  cell('ldRoof',fmt(L.sqft/100)+' squares',fmt(L.sqft)+' sq ft, measured.');
+  cell('ldStorm',L.storm[0],L.storm[1]);cell('ldSit',L.sit[0],L.sit[1]);cell('ldPerm',L.perm[0],L.perm[1]);
   document.querySelectorAll('.holo-still').forEach(im=>im.classList.toggle('on',im.dataset.kind===k));
   document.querySelectorAll('.rc-toggle button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.kind===k));
-  if(holo)holo.set({kind:k,sqft:sq,owner:0,ref:0,caption:fmt(sq)+' sq ft of roof',given:fmt(sq/100)+' squares'});
+  if(holo)holo.set({kind:k,sqft:L.sqft,owner:0,ref:0,caption:fmt(L.sqft)+' sq ft of roof',given:fmt(L.sqft/100)+' squares'});
+  if(leadSeen&&!reduce){leadEl.classList.remove('in');void leadEl.offsetWidth;leadEl.classList.add('in')}
 }
-document.querySelectorAll('.rc-toggle button').forEach(b=>b.addEventListener('click',()=>{
-  RC.kind=b.dataset.kind;const r=RC.range[RC.kind];rcSize.min=r[0];rcSize.max=r[1];rcSize.step=r[2];rcSize.value=RC.sqft[RC.kind];rcApply();
-}));
-rcSize.addEventListener('input',()=>{RC.sqft[RC.kind]=+rcSize.value;rcApply()});
-holoEl.addEventListener('holo:type',e=>{if(e.detail&&e.detail.name)rcKind.textContent=e.detail.name});
+document.querySelectorAll('.rc-toggle button').forEach(b=>b.addEventListener('click',()=>{rcKindNow=b.dataset.kind;rcApply()}));
 function loadScript(src){return new Promise((res,rej)=>{const sc=document.createElement('script');sc.src=src;sc.onload=res;sc.onerror=rej;document.head.appendChild(sc)})}
 function mountHolo(){
   if(holoAsked)return;holoAsked=true;
@@ -807,12 +828,12 @@ function mountHolo(){
     if(!window.RoofHolo)return;
     try{holo=window.RoofHolo.mount(holoEl,{lite})}catch(_){holo=null}
     if(!holo){rcLoad.remove();return}
-    holoEl.classList.add('live');rcWrap.hidden=false;rcApply();
+    holoEl.classList.add('live');rcApply();
   }).catch(()=>{rcLoad.remove()});
 }
-const rcLoad=$('rcLoad');
-rcLoad.addEventListener('click',()=>{rcLoad.setAttribute('aria-busy','true');rcLoad.firstElementChild.textContent='Loading\u2026';mountHolo()});
+rcLoad.addEventListener('click',()=>{rcLoad.setAttribute('aria-busy','true');rcLoad.firstElementChild.textContent='Loading…';mountHolo()});
 if(!lite)new IntersectionObserver((es,io)=>{if(es[0].isIntersecting){io.disconnect();mountHolo()}},{rootMargin:'600px'}).observe(holoEl);
+new IntersectionObserver((es,io)=>{if(es[0].isIntersecting){io.disconnect();leadSeen=true;leadEl.classList.add('in')}},{threshold:.4}).observe(leadEl);
 rcApply();
 
 /* ---------- story headline lights up word by word ---------- */
