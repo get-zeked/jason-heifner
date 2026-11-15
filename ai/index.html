@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Put AI on the payroll | Jason Heifner</title>
-<meta name="description" content="Jason Heifner and his AI lead come into your business, find where calls, jobs and hours slip through, and build the AI systems that handle them. Start with an AI and workflow audit.">
+<title>Fire the busywork | Jason Heifner</title>
+<meta name="description" content="Jason Heifner and his AI lead walk into your business and build the AI systems that run the busywork. Start with an audit.">
 <link rel="canonical" href="https://jason.thinkabstrakt.com/ai/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jason.thinkabstrakt.com/ai/">
-<meta property="og:title" content="Put AI on the payroll | Jason Heifner">
+<meta property="og:title" content="Fire the busywork | Jason Heifner">
 <meta property="og:description" content="Jason Heifner and his AI lead come into your business and build the systems that run the busywork.">
 <meta name="theme-color" content="#070808">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23070808'/%3E%3Cpath d='M22 12h30L42 52H12z' fill='%23FFD60A'/%3E%3C/svg%3E">
 <link rel="preload" href="../archivo-display.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="../archivo-text.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="../jason.webp" as="image" fetchpriority="high">
 <style>
 @font-face{font-family:"Archivo";src:url(../archivo-display.woff) format("woff");font-style:italic;font-weight:900;font-stretch:62%;font-display:block}
 @font-face{font-family:"Archivo";src:url(../archivo-label.woff) format("woff");font-style:italic;font-weight:800;font-stretch:80%;font-display:swap}
@@ -129,16 +130,15 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 .ai-hero{position:relative;min-height:100svh;background:var(--black);overflow:hidden;display:flex;align-items:flex-end}
 #field{position:absolute;inset:0;width:100%;height:100%}
 .ai-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(40% 50% at 74% 62%,rgba(246,246,242,.12),transparent 70%)}
-.ai-photo{position:absolute;right:max(2vw,calc((100vw - var(--max))/2));bottom:0;height:80%;aspect-ratio:594/774;z-index:1;pointer-events:none;display:none}
+.ai-photo{position:absolute;right:max(2vw,calc((100vw - var(--max))/2));bottom:0;height:80%;aspect-ratio:594/774;z-index:1;pointer-events:none}
 .ai-photo img{width:100%;height:100%;opacity:0;transform:translateY(7%) scale(1.06);transform-origin:50% 100%;transition:opacity .45s ease,transform 1s cubic-bezier(.16,1,.3,1)}
 .jason .ai-photo img{opacity:1;transform:none}
-@media (min-width:1000px){.ai-photo{display:block}}
 .ai-shade{position:absolute;inset:auto 0 0 0;height:46%;pointer-events:none;z-index:2;background:linear-gradient(180deg,rgba(7,8,8,0),rgba(7,8,8,.86) 62%,rgba(7,8,8,.97))}
 .ai-hero-in{position:relative;z-index:3;width:100%;padding:110px var(--gutter) 128px}
 .hl{font-size:14vw;line-height:.84;white-space:nowrap}
 .hl span{display:block;width:max-content;opacity:0;transform:translateX(-40vw) skewX(-10deg);transition:transform .8s cubic-bezier(.16,1,.3,1),opacity .18s linear}
 .hl span:nth-child(2){transform:translateX(40vw) skewX(10deg);transition-delay:.08s}
-.hl span:nth-child(3){transition-delay:.16s;color:var(--yellow)}
+.hl span:last-child{color:var(--yellow)}
 .loaded .hl span{opacity:1;transform:none}
 .ai-sub{max-width:34em;margin-top:26px;font-size:clamp(17px,1.4vw,20px);line-height:1.5;color:#E4E6E1}
 .ai-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px;padding-left:6px}
@@ -147,7 +147,17 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 .loaded .fade-in{opacity:1;transform:none}
 .sec{padding:clamp(90px,11vw,160px) 0}
 .sec-head{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end;margin-bottom:clamp(36px,5vw,64px)}
-@media (max-width:860px){.sec-head{grid-template-columns:1fr;gap:18px}.ai-hero-in{padding-bottom:104px}}
+@media (max-width:999px){
+  .ai-hero{display:flex;flex-direction:column;align-items:stretch;min-height:0;padding:92px 0 92px}
+  .ai-hero-in{display:contents}
+  .hl{order:1;position:relative;z-index:3;padding:0 var(--gutter)}
+  .ai-photo{order:2;position:relative;right:auto;bottom:auto;height:auto;width:min(80%,360px);align-self:flex-end;margin:-7% -3% 0 0}
+  .ai-photo::after{content:"";position:absolute;inset:auto -10% 0 -40%;height:36%;background:linear-gradient(180deg,rgba(7,8,8,0),var(--black) 86%)}
+  .ai-low{order:3;position:relative;z-index:3;padding:0 var(--gutter);margin-top:-56px}
+  .ai-sub{margin-top:0}
+  .ai-shade,.ai-glow{display:none}
+}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr;gap:18px}}
 
 /* demo */
 .demo{background:var(--coal)}
@@ -185,7 +195,7 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 .leaks>div{border-top:3px solid var(--yellow);padding-top:22px}
 .leaks h3{font-size:clamp(32px,3.4vw,50px);margin-bottom:12px}
 .leaks p{color:#C6CAC6}
-.say{margin-top:clamp(64px,8vw,120px);font-size:clamp(34px,4.6vw,76px);line-height:.92}
+.say{margin-top:clamp(64px,8vw,120px);font-size:clamp(44px,7vw,116px);line-height:.88}
 .say .w{display:inline-block;margin-right:.22em;opacity:.16;transition:opacity .3s linear}
 .say .w.on{opacity:1}
 .say .w.y{color:var(--yellow)}
@@ -286,16 +296,16 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 <section class="ai-hero" id="hero" aria-label="Introduction">
   <canvas id="field" aria-hidden="true"></canvas>
   <div class="ai-glow"></div>
-  <div class="ai-photo"><img src="../jason.webp" width="594" height="774" loading="lazy" decoding="async" alt="Jason Heifner pointing straight at the camera."></div>
+  <div class="ai-photo"><img src="../jason.webp" width="594" height="774" fetchpriority="high" decoding="async" alt="Jason Heifner in a black cap and a shirt that reads Earn it, pointing straight at the camera."></div>
   <div class="ai-shade"></div>
   <div class="ai-hero-in">
-    <h1 class="display hl" id="hl" aria-label="Put AI on the payroll."><span aria-hidden="true">Put AI</span><span aria-hidden="true">on the</span><span aria-hidden="true">payroll.</span></h1>
-    <p class="ai-sub fade-in">Jason and his AI lead come into your business, find where calls, jobs and hours slip through, and build the systems that handle them. Calls get answered, records stay current and customers stay informed, without anyone on your team chasing it.</p>
+    <h1 class="display hl" id="hl" aria-label="Fire the busywork."><span aria-hidden="true">Fire the</span><span aria-hidden="true">busywork.</span></h1>
+    <div class="ai-low"><p class="ai-sub fade-in">Jason and his AI lead walk into your business and build the systems that run it. Calls answered. Records current. Customers updated. Nobody chasing.</p>
     <div class="ai-cta fade-in">
       <a class="btn btn-y" href="#audit"><span>Request an audit</span></a>
       <a class="btn btn-w" href="#demo"><span>Watch a job run itself</span></a>
     </div>
-    <p class="ai-where fade-in">Based in Dallas. Working with teams nationwide.</p>
+    <p class="ai-where fade-in">Based in Dallas. Working with teams nationwide.</p></div>
   </div>
 </section>
 
@@ -304,8 +314,8 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 <section class="sec demo" id="demo" aria-label="Live demo">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="display h2">Watch one job run itself.</h2>
-      <p class="lede dim">Pick a business like yours. Every step marked in yellow happened without anyone on your team touching it.</p>
+      <h2 class="display h2">Watch a job run itself.</h2>
+      <p class="lede dim">Pick your business. Yellow means nobody on your team touched it.</p>
     </div>
     <div class="demo-tabs" id="dTabs" role="tablist" aria-label="Choose a business"></div>
     <div class="demo-panel">
@@ -320,7 +330,7 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
         <div class="demo-bar"><i id="dBar"></i></div>
         <p class="demo-close" id="dClose"></p>
         <button class="btn btn-w" id="dReplay" type="button"><span>Replay</span></button>
-        <p class="demo-note">A made-up job to show the idea. Yours gets mapped in the audit.</p>
+        <p class="demo-note">A made-up job. Yours gets mapped in the audit.</p>
       </aside>
     </div>
   </div>
@@ -330,14 +340,14 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="display h2">Where the money leaks.</h2>
-      <p class="lede dim">Jason has run shops through storm season. These are the three leaks he finds in almost every business he walks into.</p>
+      <p class="lede dim">Three leaks. Almost every business has them.</p>
     </div>
     <div class="leaks">
-      <div><h3 class="display">Requests slip through</h3><p>Calls get missed and requests sit in inboxes while your team is busy doing the actual job.</p></div>
-      <div><h3 class="display">Data lives everywhere</h3><p>Spreadsheets, inboxes, sticky notes and three apps that don't talk to each other.</p></div>
-      <div><h3 class="display">Good people on busywork</h3><p>Your best people spend hours on tasks a well-built system could handle on its own.</p></div>
+      <div><h3 class="display">Requests slip through</h3><p>Calls get missed while your team is doing the job.</p></div>
+      <div><h3 class="display">Data lives everywhere</h3><p>Spreadsheets, inboxes and three apps that don't talk.</p></div>
+      <div><h3 class="display">Good people on busywork</h3><p>Your best people, stuck on tasks a system should run.</p></div>
     </div>
-    <p class="display say" id="say">Most businesses don't need more people. They need the people they have to stop copying, pasting, chasing and re-typing, and start doing the work only they can do.</p>
+    <p class="display say" id="say">You don't need more people. You need the ones you have off the busywork.</p>
   </div>
 </section>
 
@@ -345,12 +355,12 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="display h2">What gets <span class="mark">built.</span></h2>
-      <p class="lede dim">AI that works inside your business, not next to it. It connects to the tools you already use and the way your team already works. No rip-and-replace.</p>
+      <p class="lede dim">AI inside your business, wired to the tools you already use. No rip-and-replace.</p>
     </div>
     <div class="sys-grid">
 
       <article class="sys">
-        <div class="sys-copy"><h3 class="display">Voice and chat agents</h3><p>AI receptionists and chat agents that answer calls and messages around the clock, capture the details and book the appointment, with a clean handoff when a person is needed.</p></div>
+        <div class="sys-copy"><h3 class="display">Voice and chat agents</h3><p>Answers every call and message, day or night. Captures the details. Books the job.</p></div>
         <div class="sys-demo seq" data-max="5" aria-hidden="true">
           <div class="sys-tag"><span>Inbound call</span><b>Voice agent on the line</b></div>
           <div class="bub" data-s="1"><small>Caller</small>My truck got caught in the hail on Sunday. Can someone take a look?</div>
@@ -363,7 +373,7 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
       </article>
 
       <article class="sys">
-        <div class="sys-copy"><h3 class="display">Workflow automation</h3><p>The handoffs between your tools, done for you. When something happens in one place, the right record, task and message follow everywhere else.</p></div>
+        <div class="sys-copy"><h3 class="display">Workflow automation</h3><p>One thing happens, everything else follows. Records, tasks and messages, handled.</p></div>
         <div class="sys-demo seq" data-max="5" aria-hidden="true">
           <div class="sys-tag"><span>Automation</span><b>Always on</b></div>
           <div class="when" data-s="1"><small>When</small>An estimate is approved</div>
@@ -376,7 +386,7 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
       </article>
 
       <article class="sys">
-        <div class="sys-copy"><h3 class="display">Tools and dashboards</h3><p>Job boards, trackers and queues built around how your business runs, so your team can see where the work stands and what needs attention next without asking.</p></div>
+        <div class="sys-copy"><h3 class="display">Tools and dashboards</h3><p>Job boards and trackers built around your shop. Everyone sees where the work stands.</p></div>
         <div class="sys-demo seq" data-max="4" aria-hidden="true">
           <div class="sys-tag"><span>Job board</span><b>Updates itself</b></div>
           <div class="board3">
@@ -389,7 +399,7 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
       </article>
 
       <article class="sys">
-        <div class="sys-copy"><h3 class="display">Customer updates</h3><p>Status pages, reminders and progress messages that keep customers informed from booking to pickup, without your team writing or sending a single one.</p></div>
+        <div class="sys-copy"><h3 class="display">Customer updates</h3><p>Status texts from booking to pickup. Your team never writes one.</p></div>
         <div class="sys-demo seq" data-max="5" aria-hidden="true">
           <div class="sys-tag"><span>Your 2021 F-150, job 2041</span><b>Sent automatically</b></div>
           <div class="trk"><div data-s="1">Checked in</div><div data-s="2">In repair</div><div data-s="3">Quality check</div><div data-s="4">Ready</div></div>
@@ -407,27 +417,25 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="display h2">Two people walk in.</h2>
-      <p class="lede dim">One knows how the work breaks. The other builds the system that stops it. You work with both of them directly.</p>
+      <p class="lede dim">One knows where the work breaks. One builds the fix.</p>
     </div>
     <div class="team">
       <div>
         <div class="role">The operator</div>
         <h3 class="display">Jason Heifner</h3>
-        <p>Jason runs auto hail and roofing operations in Dallas and Phoenix. He walks your floor, sits with your office and finds where the work breaks, because he's had the same breaks in his own shops.</p>
-        <p>He's the one who makes sure what gets built fits how your crew really works.</p>
+        <p>Runs hail and roofing in Dallas and Phoenix. He walks your floor and finds where the work breaks, because it's broken on him too.</p>
       </div>
       <div>
-        <div class="role">The AI lead</div>
-        <h3 class="display">Zeke Thompson</h3>
-        <p>Zeke is the founder of <a href="https://thinkabstrakt.com" target="_blank" rel="noopener">Abstrakt</a>. He has built CRMs, voice agents and internal tools, shipped software platforms and launched his own products, including Panel Ops.</p>
-        <p>He audits your business, builds the systems and stays accountable for how they perform.</p>
+        <div class="role">The builder</div>
+        <h3 class="display">His AI lead</h3>
+        <p>Builds the CRMs, voice agents and tools through <a href="https://thinkabstrakt.com" target="_blank" rel="noopener">Abstrakt</a>, including Panel Ops, and stays accountable for how they perform.</p>
       </div>
     </div>
     <div class="proof">
       <b class="display">$3M+</b>
       <div>
         <h3 class="display">It started in Jason's own shop.</h3>
-        <p>For Metal Majic, Jason's hail repair company, Zeke built one system from first call to finished repair: the CRM, the follow-up, an AI voice agent for booking and status calls, and repair-progress dashboards for customers. More than $3M in revenue has come through it.</p>
+        <p>One system runs Metal Majic, his hail repair company, from first call to finished repair. More than $3M in revenue has come through it.</p>
       </div>
     </div>
   </div>
@@ -436,20 +444,20 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 <section class="sec light" id="how" aria-label="How it works">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="display h2">Start with an audit. Build what it finds.</h2>
-      <p class="lede dim">Every engagement starts with understanding how your business really runs. From there, you choose how far to take it.</p>
+      <h2 class="display h2">Audit first. Then build.</h2>
+      <p class="lede dim">Start with how your business runs. Decide how far to take it.</p>
     </div>
     <ol class="steps">
       <li>
-        <div><span class="when2">Start here</span><h3 class="display">AI and workflow audit</h3><p>A fixed-scope look at how work moves through your business, ending with a clear plan for what to automate first.</p><p class="terms">Fixed fee.</p></div>
+        <div><span class="when2">Start here</span><h3 class="display">AI and workflow audit</h3><p>We map how work moves and hand you a plan for what to automate first.</p><p class="terms">Fixed fee.</p></div>
         <ul><li>Workflow and tool-stack review</li><li>Time and cost leaks, quantified</li><li>Prioritized automation roadmap</li><li>Walkthrough with your team</li></ul>
       </li>
       <li>
-        <div><span class="when2">After the audit</span><h3 class="display">Systems build</h3><p>The systems on your roadmap, designed, built and launched, connected to the tools your team already uses.</p><p class="terms">Per project, scoped from your audit roadmap.</p></div>
+        <div><span class="when2">After the audit</span><h3 class="display">Systems build</h3><p>We build and launch what's on the plan, wired to your tools.</p><p class="terms">Per project.</p></div>
         <ul><li>AI agents and assistants</li><li>CRM, pipeline and integration builds</li><li>Internal tools and dashboards</li><li>Launch, testing and handoff</li></ul>
       </li>
       <li>
-        <div><span class="when2">Once you're live</span><h3 class="display">Ongoing partner</h3><p>Your systems keep improving, new automations get added as you grow, and your team gets trained on the tools.</p><p class="terms">Month to month, after your first build.</p></div>
+        <div><span class="when2">Once you're live</span><h3 class="display">Ongoing partner</h3><p>We keep improving it and train your team.</p><p class="terms">Month to month.</p></div>
         <ul><li>Monitoring and optimization</li><li>New automations each month</li><li>Staff training on new tools</li><li>Priority support</li></ul>
       </li>
     </ol>
@@ -459,9 +467,9 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 <section class="sec work gold audit" id="audit" aria-label="Request an audit">
   <div class="wrap audit-grid">
     <div>
-      <h2 class="display h2">What's eating your team's time?</h2>
-      <p class="lede">Request an AI and workflow audit. Jason and Zeke will show you where the hours go and what to automate first.</p>
-      <p class="audit-mail">Or email <a href="mailto:hello@thinkabstrakt.com">hello@thinkabstrakt.com</a>. No pitch deck, just a real conversation about your workflow.</p>
+      <h2 class="display h2">What's eating your time?</h2>
+      <p class="lede">Request an audit. We'll show you where the hours go and what to automate first.</p>
+      <p class="audit-mail">Or email <a href="mailto:hello@thinkabstrakt.com">hello@thinkabstrakt.com</a>. No pitch deck.</p>
     </div>
     <form class="contact" id="auditForm" novalidate>
       <h3 class="display form-title">Request an audit</h3>
@@ -515,7 +523,7 @@ function fitHeadline(){
   const W=hero.clientWidth,H=innerHeight,g=parseFloat(getComputedStyle(hl.parentElement).paddingLeft),cw=W-2*g;
   hl.style.fontSize='100px';
   const widest=Math.max(...[...hl.children].map(s=>s.offsetWidth));
-  const byW=100*(W>=1000?cw*.6:cw)/widest,byH=(H-(W>=1000?476:450))/(3*.84);
+  const n=hl.children.length,byW=100*(W>=1000?cw*.6:cw)/widest*.985,byH=(H-(W>=1000?476:450))/(n*.84);
   hl.style.fontSize=Math.max(54,Math.min(byW,byH))+'px';
   const r=hl.getBoundingClientRect(),hr=hero.getBoundingClientRect();
   bandT=(r.top-hr.top+r.height*.5)/hr.height;
@@ -623,7 +631,7 @@ document.querySelectorAll('.seq').forEach(box=>{
 /* ---------- statement lights up word by word ---------- */
 const say=$('say'),sayText=say.textContent.trim(),sp=sayText.split(/\s+/);
 say.setAttribute('aria-label',sayText);
-say.innerHTML=sp.map((w,i)=>'<span class="w'+(i>=sp.length-6?' y':'')+'" aria-hidden="true">'+w+'</span>').join('');
+say.innerHTML=sp.map((w,i)=>'<span class="w'+(i>=sp.length-3?' y':'')+'" aria-hidden="true">'+w+'</span>').join('');
 const sw=[...say.children];
 if(reduce)sw.forEach(w=>w.classList.add('on'));
 
@@ -654,7 +662,7 @@ function sizeAll(){fitHeadline();sizeField();fitFoot();sizeTicker();onScroll()}
 let rz,lastW=innerWidth;addEventListener('resize',()=>{if(lite&&innerWidth===lastW)return;lastW=innerWidth;clearTimeout(rz);rz=setTimeout(sizeAll,120)});
 sizeAll();
 let fontWait=Promise.resolve();
-try{if(document.fonts&&document.fonts.load)fontWait=document.fonts.load('italic 900 extra-condensed 40px Archivo','PUTAIONTHEPAYROLL')}catch(_){}
+try{if(document.fonts&&document.fonts.load)fontWait=document.fonts.load('italic 900 extra-condensed 40px Archivo','FIRETHEBUSYWORK')}catch(_){}
 intro(Promise.resolve(fontWait).catch(()=>{}));
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(sizeAll);
 })();
