@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Put AI to work | Jason Heifner</title>
-<meta name="description" content="Jason Heifner and his AI lead walk into your business and build the AI systems that run the busywork. Start with an audit.">
+<meta name="description" content="Most teams lose dozens of hours a week to work AI can run. Jason Heifner and his AI lead find those hours and build the AI that takes them back.">
 <link rel="canonical" href="https://jason.thinkabstrakt.com/ai/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jason.thinkabstrakt.com/ai/">
 <meta property="og:title" content="Put AI to work | Jason Heifner">
-<meta property="og:description" content="Jason Heifner and his AI lead come into your business and build the systems that run the busywork.">
+<meta property="og:description" content="Dozens of hours a week, back. Custom AI built around how your business runs.">
 <meta name="theme-color" content="#070808">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23070808'/%3E%3Cpath d='M22 12h30L42 52H12z' fill='%23FFD60A'/%3E%3C/svg%3E">
 <link rel="preload" href="../archivo-display.woff" as="font" type="font/woff" crossorigin>
@@ -159,47 +159,58 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 }
 @media (max-width:860px){.sec-head{grid-template-columns:1fr;gap:18px}}
 
-/* demo */
-.demo{background:var(--coal)}
+/* hours */
+.hours{background:var(--coal)}
 .demo-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
 .demo-tabs button{all:unset;box-sizing:border-box;cursor:pointer;padding:12px 20px 10px;font-stretch:80%;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.03em;font-size:15px;border:2px solid var(--hair);color:#C9CCC6;transform:skewX(-10deg);transition:background .2s,color .2s,border-color .2s}
 .demo-tabs button:hover{border-color:var(--white);color:var(--white)}
 .demo-tabs button:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .demo-tabs button[aria-selected=true]{background:var(--yellow);border-color:var(--yellow);color:var(--black)}
-.demo-panel{display:grid;grid-template-columns:1.5fr .7fr;background:var(--black);box-shadow:inset 0 0 0 1px var(--hair);border-top:4px solid var(--yellow)}
-.demo-job{padding:clamp(20px,3vw,38px)}
-.demo-ref{font-stretch:80%;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.04em;font-size:14px;color:var(--yellow)}
-.demo-job h3{font-size:clamp(34px,3.8vw,56px);margin:6px 0 20px}
-.demo-rows{list-style:none;border-top:1px solid var(--hair)}
-.demo-rows li{display:grid;grid-template-columns:104px 1fr auto;gap:16px;align-items:center;padding:11px 0;border-bottom:1px solid var(--hair);opacity:.16;transition:opacity .35s ease}
-.demo-rows li.on{opacity:1}
-.demo-rows time{font-size:13px;color:var(--steel);font-variant-numeric:tabular-nums}
-.demo-rows .ev{font-size:15.5px;line-height:1.35}
-.demo-rows .who{font-size:12.5px;font-weight:700;padding:4px 9px 3px;white-space:nowrap;border:1px solid rgba(255,214,10,.6);color:var(--yellow)}
-.demo-rows li.h .who{background:var(--white);border-color:var(--white);color:var(--black)}
-.demo-side{padding:clamp(20px,3vw,38px);border-left:1px solid var(--hair);display:flex;flex-direction:column;gap:14px;justify-content:center}
-.demo-count{display:flex;align-items:baseline;gap:6px;color:var(--yellow)}
-.demo-count b{font-size:clamp(90px,10vw,150px)}
-.demo-count span{font-stretch:62%;font-weight:900;font-style:italic;font-size:clamp(36px,4vw,56px);color:var(--steel)}
-.demo-side p{color:#C6CAC6;font-size:15px}
-.demo-bar{height:6px;background:var(--iron)}
-.demo-bar i{display:block;height:100%;width:0;background:var(--yellow);transition:width .4s var(--ease)}
-.demo-close{min-height:3em;font-weight:600;color:var(--white)!important;opacity:0;transition:opacity .5s ease}
-.demo-close.on{opacity:1}
-.demo-side .btn{align-self:flex-start;margin-left:6px;height:46px;padding:0 20px;font-size:15px}
-.demo-note{font-size:13px!important;color:var(--steel)!important}
-@media (max-width:860px){.demo-panel{grid-template-columns:1fr}.demo-side{border-left:0;border-top:1px solid var(--hair)}.demo-rows li{grid-template-columns:1fr auto;gap:4px 12px}.demo-rows time{grid-column:1/-1}}
+.hrs{display:grid;grid-template-columns:1.5fr .72fr;grid-template-rows:auto 1fr;background:var(--black);box-shadow:inset 0 0 0 1px var(--hair);border-top:4px solid var(--yellow)}
+.hrs-list{grid-column:1;grid-row:1/3;list-style:none;padding:clamp(6px,1.2vw,14px) clamp(20px,3vw,38px);display:flex;flex-direction:column}
+.hrs-list li{flex:1}
+.hrs-list li{display:grid;grid-template-columns:1fr minmax(150px,250px) 78px;gap:6px 24px;align-items:center;padding:17px 0;border-bottom:1px solid var(--hair)}
+.hrs-list li:last-child{border-bottom:0}
+.hrs-list label{display:block;font-weight:700;font-size:16.5px;line-height:1.3}
+.hrs-list small{display:block;color:var(--steel);font-size:13.5px;line-height:1.35;margin-top:3px}
+.hrs-list output{font-stretch:62%;font-weight:900;font-style:italic;font-size:38px;line-height:1;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.hrs-list output i{font-size:17px;color:var(--steel);margin-left:4px}
+.hrs-list li.zero label,.hrs-list li.zero output{color:var(--steel)}
+.rng{-webkit-appearance:none;appearance:none;display:block;width:100%;height:34px;margin:0;background:transparent;cursor:pointer;touch-action:pan-y}
+.rng::-webkit-slider-runnable-track{height:6px;background:linear-gradient(90deg,var(--yellow) var(--p,0%),var(--iron) var(--p,0%))}
+.rng::-moz-range-track{height:6px;background:var(--iron)}
+.rng::-moz-range-progress{height:6px;background:var(--yellow)}
+.rng::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:16px;height:28px;margin-top:-11px;background:var(--white);border:0;border-radius:0;transform:skewX(-10deg)}
+.rng::-moz-range-thumb{width:16px;height:28px;background:var(--white);border:0;border-radius:0;transform:skewX(-10deg)}
+.rng:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.hrs-total{grid-column:2;grid-row:1;border-left:1px solid var(--hair);padding:clamp(22px,3vw,38px) clamp(20px,3vw,38px) 0;display:flex;flex-direction:column;justify-content:flex-end}
+.hrs-total b{font-size:clamp(120px,13vw,210px);line-height:.78;color:var(--yellow);font-variant-numeric:tabular-nums}
+.hrs-total span{display:block;margin-top:14px;font-stretch:80%;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.03em;font-size:17px;line-height:1.2}
+.hrs-more{grid-column:2;grid-row:2;border-left:1px solid var(--hair);padding:20px clamp(20px,3vw,38px) clamp(22px,3vw,38px);display:flex;flex-direction:column;gap:12px}
+.hrs-stats{list-style:none;border-top:1px solid var(--hair)}
+.hrs-stats li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-bottom:1px solid var(--hair);color:#C6CAC6;font-size:15px}
+.hrs-stats b{font-stretch:62%;font-weight:900;font-style:italic;font-size:30px;line-height:1;color:var(--white);font-variant-numeric:tabular-nums}
+.hrs-more .btn{align-self:flex-start;margin:6px 0 0 6px}
+.hrs-note{font-size:13px;color:var(--steel);line-height:1.45}
+@media (max-width:860px){
+  .hrs{display:block}
+  .hrs-list{display:block}
+  .hrs-total{position:sticky;top:68px;z-index:4;flex-direction:row;align-items:baseline;justify-content:flex-start;gap:12px;padding:12px 20px 10px;border-left:0;border-bottom:1px solid var(--hair);background:var(--black)}
+  .hrs-total b{font-size:64px;line-height:.82}
+  .hrs-total span{margin:0;font-size:14px}
+  .hrs-list li{grid-template-columns:1fr auto;gap:2px 14px;padding:15px 0 9px}
+  .hrs-list li>div{grid-column:1}
+  .hrs-list output{grid-column:2;grid-row:1;font-size:32px}
+  .rng{grid-column:1/-1;height:40px}
+  .hrs-more{border-left:0;border-top:1px solid var(--hair)}
+}
 
-/* leaks */
-.leaks{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,60px)}
-.leaks>div{border-top:3px solid var(--yellow);padding-top:22px}
-.leaks h3{font-size:clamp(32px,3.4vw,50px);margin-bottom:12px}
-.leaks p{color:#C6CAC6}
-.say{margin-top:clamp(64px,8vw,120px);font-size:clamp(44px,7vw,116px);line-height:.88}
+/* statement */
+.state{padding-top:clamp(70px,9vw,130px);padding-bottom:clamp(70px,9vw,130px)}
+.say{font-size:clamp(44px,7vw,116px);line-height:.88}
 .say .w{display:inline-block;margin-right:.22em;opacity:.16;transition:opacity .3s linear}
 .say .w.on{opacity:1}
 .say .w.y{color:var(--yellow)}
-@media (max-width:800px){.leaks{grid-template-columns:1fr}}
 
 /* systems */
 .sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -222,7 +233,8 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 .when{font-weight:700;padding:9px 12px;border:1px solid rgba(255,214,10,.6)}
 .when small{font-weight:600;color:var(--yellow);margin-right:8px}
 .hand{display:flex;justify-content:space-between;gap:12px;padding:8px 12px;background:var(--iron)}
-.hand span{color:var(--steel);font-size:12.5px}
+.hand span{color:var(--steel);font-size:12.5px;white-space:nowrap}
+.hand .flag{color:var(--yellow);font-weight:700}
 .board3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;flex:1}
 .board3>div{background:#0E1011;padding:8px;display:flex;flex-direction:column;gap:6px}
 .board3 h4{font-size:12px;color:var(--steel);font-weight:600;margin-bottom:2px}
@@ -243,11 +255,7 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 .team h3{font-size:clamp(44px,5.4vw,84px);margin:6px 0 14px}
 .team p{color:#C6CAC6;max-width:34em}
 .team p+p{margin-top:12px}
-.proof{margin-top:clamp(56px,7vw,100px);display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,5vw,72px);align-items:center;padding:clamp(26px,4vw,52px);background:var(--coal);box-shadow:inset 0 0 0 1px var(--hair)}
-.proof b{font-size:clamp(84px,12vw,190px);color:var(--yellow);line-height:.8}
-.proof h3{font-size:clamp(30px,3.2vw,48px);margin-bottom:12px}
-.proof p{color:#C6CAC6;max-width:40em}
-@media (max-width:800px){.team,.proof{grid-template-columns:1fr}}
+@media (max-width:800px){.team{grid-template-columns:1fr}}
 
 /* steps */
 .steps{list-style:none;counter-reset:st;border-top:3px solid var(--black)}
@@ -271,7 +279,7 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
   .hl span,.fade-in,.ai-photo img,.sys-demo [data-s]{opacity:1;transform:none}
-  .demo-rows li,.say .w{opacity:1}
+  .say .w{opacity:1}
 }
 
 </style>
@@ -300,112 +308,102 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
   <div class="ai-shade"></div>
   <div class="ai-hero-in">
     <h1 class="display hl" id="hl" aria-label="Put AI to work."><span aria-hidden="true">Put AI</span><span aria-hidden="true">to work.</span></h1>
-    <div class="ai-low"><p class="ai-sub fade-in">Jason and his AI lead walk into your business and build the systems that run it. Calls answered. Records current. Customers updated. Nobody chasing.</p>
+    <div class="ai-low"><p class="ai-sub fade-in">Your team loses dozens of hours a week to work AI can run. Jason and his AI lead find those hours and build the AI that takes them back.</p>
     <div class="ai-cta fade-in">
       <a class="btn btn-y" href="#audit"><span>Request an audit</span></a>
-      <a class="btn btn-w" href="#demo"><span>Watch a job run itself</span></a>
+      <a class="btn btn-w" href="#hours"><span>Count your hours</span></a>
     </div>
-    <p class="ai-where fade-in">Based in Dallas. Working with teams nationwide.</p></div>
+    <p class="ai-where fade-in">Built custom for your business. Not a template.</p></div>
   </div>
 </section>
 
 <div class="ticker" aria-hidden="true"><div class="ticker-track display" id="ticker"></div></div>
 
-<section class="sec demo" id="demo" aria-label="Live demo">
+<section class="sec hours" id="hours" aria-label="Count your hours">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="display h2">Watch a job run itself.</h2>
-      <p class="lede dim">Pick your business. Yellow means nobody on your team touched it.</p>
+      <h2 class="display h2">Count the hours.</h2>
+      <p class="lede dim">Set how many hours a week your team spends on each one. All of it is work AI can take.</p>
     </div>
-    <div class="demo-tabs" id="dTabs" role="tablist" aria-label="Choose a business"></div>
-    <div class="demo-panel">
-      <div class="demo-job">
-        <div class="demo-ref" id="dRef"></div>
-        <h3 class="display" id="dTitle"></h3>
-        <ol class="demo-rows" id="dRows" aria-live="polite"></ol>
+    <div class="demo-tabs" id="hTabs" role="tablist" aria-label="Choose a business"></div>
+    <div class="hrs">
+      <div class="hrs-total"><b class="display" id="hNum">0</b><span>hours a week<br>on work AI can take</span></div>
+      <ul class="hrs-list" id="hList"></ul>
+      <div class="hrs-more">
+        <ul class="hrs-stats">
+          <li>Hours a year <b id="hYear">0</b></li>
+          <li>Full-time jobs' worth <b id="hFte">0</b></li>
+        </ul>
+        <p class="hrs-note" id="hSay" role="status"></p>
+        <a class="btn btn-y" id="hGo" href="#audit"><span>Get these hours back</span></a>
+        <p class="hrs-note">The starting numbers are a guess. Slide each row to match your team. The audit measures the real ones.</p>
       </div>
-      <aside class="demo-side">
-        <div class="demo-count" aria-live="polite"><b class="display" id="dCount">0</b><span>/8</span></div>
-        <p>steps handled by the system</p>
-        <div class="demo-bar"><i id="dBar"></i></div>
-        <p class="demo-close" id="dClose"></p>
-        <button class="btn btn-w" id="dReplay" type="button"><span>Replay</span></button>
-        <p class="demo-note">A made-up job. Yours gets mapped in the audit.</p>
-      </aside>
     </div>
   </div>
 </section>
 
-<section class="sec" aria-label="The problem">
+<section class="state" aria-label="The point">
   <div class="wrap">
-    <div class="sec-head">
-      <h2 class="display h2">Where the money leaks.</h2>
-      <p class="lede dim">Three leaks. Almost every business has them.</p>
-    </div>
-    <div class="leaks">
-      <div><h3 class="display">Requests slip through</h3><p>Calls get missed while your team is doing the job.</p></div>
-      <div><h3 class="display">Data lives everywhere</h3><p>Spreadsheets, inboxes and three apps that don't talk.</p></div>
-      <div><h3 class="display">Good people on busywork</h3><p>Your best people, stuck on tasks a system should run.</p></div>
-    </div>
-    <p class="display say" id="say">You don't need more people. You need the ones you have off the busywork.</p>
+    <p class="display say" id="say">You don't need more people. You need your hours back.</p>
   </div>
 </section>
 
 <section class="sec light" id="systems" aria-label="What gets built">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="display h2">What gets <span class="mark">built.</span></h2>
-      <p class="lede dim">AI inside your business, wired to the tools you already use. No rip-and-replace.</p>
+      <h2 class="display h2">Built for <span class="mark">your shop.</span></h2>
+      <p class="lede dim">Not software you log into. AI built around how your team already works. Four examples. Yours come out of the audit.</p>
     </div>
     <div class="sys-grid">
 
       <article class="sys">
-        <div class="sys-copy"><h3 class="display">Voice and chat agents</h3><p>Answers every call and message, day or night. Captures the details. Books the job.</p></div>
+        <div class="sys-copy"><h3 class="display">Estimates, drafted</h3><p>AI reads the photos and notes and writes the first draft the way you write them. Your estimator reviews and sends.</p></div>
         <div class="sys-demo seq" data-max="5" aria-hidden="true">
-          <div class="sys-tag"><span>Inbound call</span><b>Voice agent on the line</b></div>
-          <div class="bub" data-s="1"><small>Caller</small>My truck got caught in the hail on Sunday. Can someone take a look?</div>
-          <div class="bub me" data-s="2"><small>Agent</small>Absolutely. I have Thursday at 2:00 or Friday at 9:30. Which works better?</div>
-          <div class="bub" data-s="3"><small>Caller</small>Thursday at 2:00.</div>
-          <div class="done" data-s="4">Booked for Thursday, 2:00 PM</div>
-          <div class="done" data-s="5">Job opened in the CRM</div>
-          <p class="sys-cap">Every call answered. Every detail on the record.</p>
+          <div class="sys-tag"><span>Job 2041, 2021 F-150</span><b>Draft estimate</b></div>
+          <div class="done" data-s="1">38 photos read</div>
+          <div class="hand" data-s="2">Hood, 42 dents <span>PDR</span></div>
+          <div class="hand" data-s="3">Roof, 61 dents <span>PDR</span></div>
+          <div class="hand" data-s="4">Left fender, 17 dents <span>R&amp;I, PDR</span></div>
+          <div class="done" data-s="5">Draft waiting for your estimator</div>
+          <p class="sys-cap">He checks it. He doesn't type it.</p>
         </div>
       </article>
 
       <article class="sys">
-        <div class="sys-copy"><h3 class="display">Workflow automation</h3><p>One thing happens, everything else follows. Records, tasks and messages, handled.</p></div>
+        <div class="sys-copy"><h3 class="display">Supplements, caught</h3><p>AI reads the carrier's scope line by line against yours and drafts the supplement for what they left off.</p></div>
         <div class="sys-demo seq" data-max="5" aria-hidden="true">
-          <div class="sys-tag"><span>Automation</span><b>Always on</b></div>
-          <div class="when" data-s="1"><small>When</small>An estimate is approved</div>
-          <div class="hand" data-s="2">Order the parts <span>Supplier</span></div>
-          <div class="hand" data-s="3">Assign a technician <span>Job board</span></div>
-          <div class="hand" data-s="4">Text the customer a drop-off time <span>SMS</span></div>
-          <div class="hand" data-s="5">Update the customer record <span>CRM</span></div>
-          <p class="sys-cap">Four handoffs. Nobody had to remember any of them.</p>
+          <div class="sys-tag"><span>Carrier scope against yours</span><b>3 lines flagged</b></div>
+          <div class="done" data-s="1">Carrier scope read, 14 pages</div>
+          <div class="hand" data-s="2">Drip edge, 212 LF <span class="flag">Missing</span></div>
+          <div class="hand" data-s="3">Starter course, 196 LF <span class="flag">Missing</span></div>
+          <div class="hand" data-s="4">Steep charge, 8/12 pitch <span class="flag">Short</span></div>
+          <div class="done" data-s="5">Supplement drafted, photos attached</div>
+          <p class="sys-cap">Nobody reads 14 pages by hand.</p>
         </div>
       </article>
 
       <article class="sys">
-        <div class="sys-copy"><h3 class="display">Tools and dashboards</h3><p>Job boards and trackers built around your shop. Everyone sees where the work stands.</p></div>
+        <div class="sys-copy"><h3 class="display">Ask your business</h3><p>Your jobs, numbers and documents in one place. Ask in plain English, get the answer.</p></div>
         <div class="sys-demo seq" data-max="4" aria-hidden="true">
-          <div class="sys-tag"><span>Job board</span><b>Updates itself</b></div>
-          <div class="board3">
-            <div><h4>Intake</h4><div class="card">Camry, door ding<small>Photos requested</small></div><div class="card">Silverado, hail<small>Estimate drafted</small></div></div>
-            <div><h4>In repair</h4><div class="card">Accord, bumper<small>Tech assigned</small></div><div class="card hot" data-s="1" data-off="3">F-150, hail<small>Job 2041</small></div></div>
-            <div><h4>Ready</h4><div class="card">Tacoma, hail<small>Customer notified</small></div><div class="card hot" data-s="3">F-150, hail<small>Marked ready. Customer texted.</small></div></div>
-          </div>
-          <p class="sys-cap">Everyone can see where every job stands.</p>
+          <div class="sys-tag"><span>Your shop's AI</span><b>Reads your own data</b></div>
+          <div class="bub me" data-s="1"><small>You</small>Which jobs have been waiting on parts over a week?</div>
+          <div class="bub" data-s="2"><small>AI</small>Four. The oldest is job 1987, a Silverado, at 11 days. Want the list sent to the parts desk?</div>
+          <div class="bub me" data-s="3"><small>You</small>Send it.</div>
+          <div class="done" data-s="4">Sent to the parts desk</div>
+          <p class="sys-cap">An answer in seconds. Not a morning of digging.</p>
         </div>
       </article>
 
       <article class="sys">
-        <div class="sys-copy"><h3 class="display">Customer updates</h3><p>Status texts from booking to pickup. Your team never writes one.</p></div>
+        <div class="sys-copy"><h3 class="display">Every call, coached</h3><p>AI scores every sales call against your playbook and tells the rep what to fix before the next one.</p></div>
         <div class="sys-demo seq" data-max="5" aria-hidden="true">
-          <div class="sys-tag"><span>Your 2021 F-150, job 2041</span><b>Sent automatically</b></div>
-          <div class="trk"><div data-s="1">Checked in</div><div data-s="2">In repair</div><div data-s="3">Quality check</div><div data-s="4">Ready</div></div>
-          <div class="bub" data-s="1" data-off="4">Hi Dana, your F-150 is checked in. We'll text you when repairs begin.</div>
-          <div class="bub" data-s="4">Good news: your truck is ready for pickup. Your invoice is attached.</div>
-          <p class="sys-cap">Customers stop calling to ask for an update.</p>
+          <div class="sys-tag"><span>Sales call, 14 minutes</span><b>Scored on your playbook</b></div>
+          <div class="hand" data-s="1">Asked for the inspection <span>Yes</span></div>
+          <div class="hand" data-s="2">Handled the price objection <span class="flag">Missed</span></div>
+          <div class="hand" data-s="3">Set the next step <span>Yes</span></div>
+          <div class="when" data-s="4"><small>Coach</small>Price came up at 6:40. Use the deductible answer.</div>
+          <div class="done" data-s="5">Sent to the rep</div>
+          <p class="sys-cap">Every rep gets coached. Not just the ones you have time for.</p>
         </div>
       </article>
 
@@ -417,25 +415,18 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="display h2">Two people walk in.</h2>
-      <p class="lede dim">One knows where the work breaks. One builds the fix.</p>
+      <p class="lede dim">One knows where the hours go. One builds the AI that takes them back.</p>
     </div>
     <div class="team">
       <div>
         <div class="role">The operator</div>
         <h3 class="display">Jason Heifner</h3>
-        <p>Runs hail and roofing in Dallas and Phoenix. He walks your floor and finds where the work breaks, because it's broken on him too.</p>
+        <p>Runs hail and roofing in Dallas and Phoenix. He walks your floor and finds where the hours go, because he's lost the same ones.</p>
       </div>
       <div>
         <div class="role">The builder</div>
         <h3 class="display">His AI lead</h3>
-        <p>Builds the CRMs, voice agents and tools through <a href="https://thinkabstrakt.com" target="_blank" rel="noopener">Abstrakt</a>, including Panel Ops, and stays accountable for how they perform.</p>
-      </div>
-    </div>
-    <div class="proof">
-      <b class="display">$3M+</b>
-      <div>
-        <h3 class="display">It started in Jason's own shop.</h3>
-        <p>One system runs Metal Majic, his hail repair company, from first call to finished repair. More than $3M in revenue has come through it.</p>
+        <p>Designs and builds your AI through <a href="https://thinkabstrakt.com" target="_blank" rel="noopener">Abstrakt</a>, the shop behind Panel Ops. Built from scratch for your business, and accountable for how it performs.</p>
       </div>
     </div>
   </div>
@@ -445,20 +436,20 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="display h2">Audit first. Then build.</h2>
-      <p class="lede dim">Start with how your business runs. Decide how far to take it.</p>
+      <p class="lede dim">Count the hours first. Then build what takes them back.</p>
     </div>
     <ol class="steps">
       <li>
-        <div><span class="when2">Start here</span><h3 class="display">AI and workflow audit</h3><p>We map how work moves and hand you a plan for what to automate first.</p><p class="terms">Fixed fee.</p></div>
-        <ul><li>Workflow and tool-stack review</li><li>Time and cost leaks, quantified</li><li>Prioritized automation roadmap</li><li>Walkthrough with your team</li></ul>
+        <div><span class="when2">Start here</span><h3 class="display">The hours audit</h3><p>We sit with your team and count the hours, task by task. You get a ranked list of what to hand to AI first.</p><p class="terms">Fixed fee.</p></div>
+        <ul><li>Every recurring task, timed</li><li>Hours and dollars on each one</li><li>Ranked list of what to build first</li><li>Walkthrough with your team</li></ul>
       </li>
       <li>
-        <div><span class="when2">After the audit</span><h3 class="display">Systems build</h3><p>We build and launch what's on the plan, wired to your tools.</p><p class="terms">Per project.</p></div>
-        <ul><li>AI agents and assistants</li><li>CRM, pipeline and integration builds</li><li>Internal tools and dashboards</li><li>Launch, testing and handoff</li></ul>
+        <div><span class="when2">After the audit</span><h3 class="display">Custom build</h3><p>We build what's on the list, around your process and your tools.</p><p class="terms">Per project.</p></div>
+        <ul><li>Built around how your team already works</li><li>Trained on your jobs, documents and playbook</li><li>Wired into the tools you already use</li><li>Tested on real work before launch</li></ul>
       </li>
       <li>
-        <div><span class="when2">Once you're live</span><h3 class="display">Ongoing partner</h3><p>We keep improving it and train your team.</p><p class="terms">Month to month.</p></div>
-        <ul><li>Monitoring and optimization</li><li>New automations each month</li><li>Staff training on new tools</li><li>Priority support</li></ul>
+        <div><span class="when2">Once you're live</span><h3 class="display">Ongoing partner</h3><p>We keep finding hours and train your team on what's built.</p><p class="terms">Month to month.</p></div>
+        <ul><li>New builds as the list gets worked</li><li>Tuning as your business changes</li><li>Team training</li><li>Priority support</li></ul>
       </li>
     </ol>
   </div>
@@ -467,8 +458,8 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
 <section class="sec work gold audit" id="audit" aria-label="Request an audit">
   <div class="wrap audit-grid">
     <div>
-      <h2 class="display h2">What's eating your time?</h2>
-      <p class="lede">Request an audit. We'll show you where the hours go and what to automate first.</p>
+      <h2 class="display h2">Get your hours back.</h2>
+      <p class="lede">Request an audit. We count the hours, task by task, and show you what to hand to AI first.</p>
       <p class="audit-mail">Or email <a href="mailto:hello@thinkabstrakt.com">hello@thinkabstrakt.com</a>. No pitch deck.</p>
     </div>
     <form class="contact" id="auditForm" novalidate>
@@ -478,7 +469,7 @@ footer{padding:clamp(70px,9vw,120px) 0 34px;overflow:hidden}
         <div class="field"><label for="a-name">Name</label><input id="a-name" name="name" autocomplete="name" required></div>
         <div class="field"><label for="a-email">Email</label><input id="a-email" name="email" type="email" autocomplete="email" required></div>
         <div class="field full"><label for="a-company">Company</label><input id="a-company" name="company" autocomplete="organization"></div>
-        <div class="field full"><label for="a-msg">What takes up too much of your team's time?</label><textarea id="a-msg" name="message" required placeholder="Missed calls, double entry, chasing updates, scheduling, whatever it is."></textarea></div>
+        <div class="field full"><label for="a-msg">What takes up too much of your team's time?</label><textarea id="a-msg" name="message" required placeholder="Estimates, supplements, scheduling, reports, follow-up, whatever it is."></textarea></div>
       </div>
       <div class="form-foot">
         <p class="form-status" id="auditStatus" role="status">Tell us your business type and team size if you can.</p>
@@ -555,7 +546,7 @@ function fitFoot(){const box=footName.parentElement,g=parseFloat(getComputedStyl
 
 /* ---------- ticker ---------- */
 const ticker=$('ticker');
-ticker.innerHTML=['AI voice agents','Workflow automation','CRM builds','Internal tools','Customer updates','Team training'].map(w=>'<span>'+w+'</span>').join('').repeat(6);
+ticker.innerHTML=['Estimates drafted','Supplements written','Photos sorted','Schedules built','Reports run','Follow-up sent','Calls coached'].map(w=>'<span>'+w+'</span>').join('').repeat(6);
 let tickAnim=null;
 function sizeTicker(){
   if(reduce||!ticker.animate)return;
@@ -564,59 +555,60 @@ function sizeTicker(){
 }
 new IntersectionObserver(es=>{if(!tickAnim)return;es[0].isIntersecting?tickAnim.play():tickAnim.pause()}).observe(ticker.parentElement);
 
-/* ---------- demo: one job, eight steps ---------- */
-const JOBS=[
-  {tab:'Hail shop',ref:'Job 2041',title:'Hail repair, 2021 F-150',close:'Your team did two things: approved the estimate and fixed the truck.',rows:[
-    ['Tue 8:02 AM','Call answered, damage details captured','Voice agent',0],
-    ['Tue 8:03 AM','Job opened in the CRM, photos requested by text','Automation',0],
-    ['Tue 8:26 AM','Photos received, estimate drafted','Automation',0],
-    ['Tue 9:10 AM','Estimate reviewed and approved','Your estimator',1],
-    ['Tue 9:11 AM','Estimate sent, drop-off booked for Thursday','Automation',0],
-    ['Thu 7:45 AM','Vehicle checked in, technician assigned','Automation',0],
-    ['Mon 3:30 PM','Repair finished and signed off','Your technician',1],
-    ['Mon 3:31 PM','Customer notified, invoice sent, review requested','Automation',0]]},
-  {tab:'Roofing',ref:'Job 5127',title:'Storm claim, 28-square roof',close:'Your team did two things: inspected the roof and replaced it.',rows:[
-    ['Sat 7:12 PM','Storm-night call answered, address and damage captured','Voice agent',0],
-    ['Sat 7:13 PM','Job opened in the CRM, inspection booked for Monday','Automation',0],
-    ['Mon 8:30 AM','Reminder sent, inspection added to the route','Automation',0],
-    ['Mon 10:00 AM','Roof inspected, photos and measurements uploaded','Your inspector',1],
-    ['Mon 10:20 AM','Scope and estimate drafted from the inspection','Automation',0],
-    ['Mon 4:05 PM','Estimate signed by the owner, materials ordered','Automation',0],
-    ['Thu 3:50 PM','Roof replaced and signed off','Your crew',1],
-    ['Thu 3:51 PM','Customer notified, invoice sent, review requested','Automation',0]]},
-  {tab:'Home services',ref:'Ticket 884',title:'No-cool call, AC repair',close:'Your team did two things: diagnosed the problem and fixed it.',rows:[
-    ['Fri 6:48 PM','After-hours call answered, issue and address captured','Voice agent',0],
-    ['Fri 6:49 PM','Ticket opened, Saturday 9:00 slot booked','Automation',0],
-    ['Sat 8:15 AM','Tech dispatched with job notes, customer texted an ETA','Automation',0],
-    ['Sat 9:05 AM','System diagnosed, repair quoted on site','Your technician',1],
-    ['Sat 9:06 AM','Quote approved by text, ticket updated','Automation',0],
-    ['Sat 10:40 AM','Repair finished and signed off','Your technician',1],
-    ['Sat 10:41 AM','Invoice sent, payment collected by link','Automation',0],
-    ['2 weeks on','Maintenance plan offer and review request sent','Automation',0]]}
+/* ---------- hours: the visitor's own count ---------- */
+const SETS=[
+  {tab:'Hail shop',rows:[
+    ['Writing estimates and supplements','AI drafts them from the photos and notes.',10],
+    ['Insurance back-and-forth','AI reads the adjuster\'s scope and drafts the reply.',6],
+    ['Customer status calls and texts','AI keeps every customer current.',7],
+    ['Sorting and labeling damage photos','AI files them to the job, panel by panel.',4],
+    ['Scheduling techs and drop-offs','AI builds the schedule. You approve it.',4],
+    ['Reports, payroll math and data entry','AI pulls the numbers straight from the jobs.',6]]},
+  {tab:'Roofing',rows:[
+    ['Building scopes and estimates','AI drafts them from inspection photos and measurements.',9],
+    ['Reading carrier scopes, writing supplements','AI finds what the carrier left off.',7],
+    ['Working storm lists and follow-up','AI sorts who to hit first and keeps follow-up moving.',8],
+    ['Scheduling inspections and crews','AI builds the schedule. You approve it.',5],
+    ['Material orders and job paperwork','AI fills them in from the signed scope.',4],
+    ['Commission, production and job-cost reports','AI pulls the numbers straight from the jobs.',5]]},
+  {tab:'Any business',rows:[
+    ['Email, texts and follow-up','AI drafts and sends the routine ones.',10],
+    ['Quotes and proposals','AI writes the first draft from your past work.',6],
+    ['Moving data between systems','AI does the entry. Nobody retypes anything.',8],
+    ['Scheduling and dispatch','AI builds the schedule. You approve it.',5],
+    ['Reports and spreadsheets','AI builds them from the data you already have.',5],
+    ['Answering the same questions','AI answers from your own documents.',6]]}
 ];
-const dTabs=$('dTabs'),dRows=$('dRows'),dCount=$('dCount'),dBar=$('dBar'),dClose=$('dClose');
-let dJob=0,dStep=0,dTimer=0,dSeen=false;
-JOBS.forEach((j,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent=j.tab;b.addEventListener('click',()=>{dJob=i;dLoad();dRun()});dTabs.appendChild(b)});
-function dLoad(){
-  const j=JOBS[dJob];clearTimeout(dTimer);dStep=0;
-  [...dTabs.children].forEach((b,i)=>b.setAttribute('aria-selected',i===dJob));
-  $('dRef').textContent=j.ref;$('dTitle').textContent=j.title;dClose.textContent=j.close;dClose.classList.remove('on');
-  dRows.innerHTML=j.rows.map(r=>'<li class="'+(r[3]?'h':'s')+'"><time>'+r[0]+'</time><span class="ev">'+r[1]+'</span><span class="who">'+r[2]+'</span></li>').join('');
-  dPaint();
+const hTabs=$('hTabs'),hList=$('hList'),hNum=$('hNum'),hYear=$('hYear'),hFte=$('hFte'),hSay=$('hSay'),aMsg=$('a-msg');
+const hVals=SETS.map(s=>s.rows.map(r=>r[2]));
+let hSet=0,hShown=0,hRaf=0,hFill='';
+const hTotal=()=>hVals[hSet].reduce((a,b)=>a+b,0);
+function hSummary(){
+  const rows=SETS[hSet].rows.map((r,i)=>[r[0],hVals[hSet][i]]).filter(r=>r[1]>0).sort((a,b)=>b[1]-a[1]);
+  return SETS[hSet].tab+': about '+hTotal()+' hours a week on work AI can take.\n'+rows.map(r=>r[0]+': '+r[1]+' hrs').join('\n');
 }
-function dPaint(){
-  const j=JOBS[dJob];let sys=0;
-  [...dRows.children].forEach((li,i)=>{const on=i<dStep;li.classList.toggle('on',on);if(on&&!j.rows[i][3])sys++});
-  dCount.textContent=sys;dBar.style.width=(sys/8*100)+'%';dClose.classList.toggle('on',dStep>=8);
+function hPaint(tween){
+  const t=hTotal();
+  hYear.textContent=(t*52).toLocaleString('en-US');hFte.textContent=(t/40).toFixed(1);
+  hSay.textContent=t===0?'Slide a row to start counting.':t<12?'Small pile. The audit usually finds more.':t<40?'That\'s most of a full-time job, every week.':'That\'s a full-time job or more, every week.';
+  cancelAnimationFrame(hRaf);
+  if(!tween||reduce){hShown=t;hNum.textContent=t}
+  else{const from=hShown,t0=performance.now();(function step(now){const p=clamp((now-t0)/450),e=1-Math.pow(1-p,3);hShown=from+(t-from)*e;hNum.textContent=Math.round(hShown);if(p<1)hRaf=requestAnimationFrame(step);else hShown=t})(t0)}
+  if(aMsg.value===hFill&&hFill){hFill=t?hSummary():'';aMsg.value=hFill}
 }
-function dRun(){
-  clearTimeout(dTimer);
-  if(reduce){dStep=8;dPaint();return}
-  (function next(){dPaint();if(dStep<8){dStep++;dTimer=setTimeout(next,dStep===1?350:620)}})();
+function hLoad(){
+  [...hTabs.children].forEach((b,i)=>b.setAttribute('aria-selected',i===hSet));
+  hList.innerHTML=SETS[hSet].rows.map((r,i)=>{const v=hVals[hSet][i];return '<li class="'+(v?'':'zero')+'"><div><label for="hr'+i+'">'+r[0]+'</label><small>'+r[1]+'</small></div><input class="rng" id="hr'+i+'" type="range" min="0" max="40" step="1" value="'+v+'" data-i="'+i+'" aria-valuetext="'+v+' hours a week" style="--p:'+(v/40*100)+'%"><output for="hr'+i+'">'+v+'<i>hrs</i></output></li>'}).join('');
 }
-$('dReplay').addEventListener('click',()=>{dStep=0;dRun()});
-dLoad();
-new IntersectionObserver((es,io)=>{if(es[0].isIntersecting){io.disconnect();dSeen=true;dRun()}},{threshold:.3}).observe(dRows);
+SETS.forEach((st,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent=st.tab;b.addEventListener('click',()=>{hSet=i;hLoad();hPaint(true)});hTabs.appendChild(b)});
+hList.addEventListener('input',e=>{
+  const el=e.target;if(!el.classList.contains('rng'))return;
+  const v=+el.value;hVals[hSet][+el.dataset.i]=v;el.style.setProperty('--p',(v/40*100)+'%');el.setAttribute('aria-valuetext',v+' hours a week');
+  const li=el.parentElement;li.classList.toggle('zero',!v);li.querySelector('output').firstChild.nodeValue=v;hPaint(false);
+});
+$('hGo').addEventListener('click',()=>{if(hTotal()&&(!aMsg.value.trim()||aMsg.value===hFill)){hFill=hSummary();aMsg.value=hFill}});
+hLoad();hPaint(false);hNum.textContent=0;hShown=0;
+new IntersectionObserver((es,io)=>{if(es[0].isIntersecting){io.disconnect();hPaint(true)}},{threshold:.25}).observe(hList);
 
 /* ---------- the four small system demos: step through while on screen ---------- */
 document.querySelectorAll('.seq').forEach(box=>{
